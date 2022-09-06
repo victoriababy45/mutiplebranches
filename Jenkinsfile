@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('git-clone'){
      steps{
-      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/victoriababy45/mutiplebranches.git']]])
+      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/victoriababy45/matibranch.git']]])
      } 
     }
     stage('actions1 and actions2'){
@@ -18,7 +18,7 @@ pipeline{
             echo "action2"
           }
         }
-        stage('user-check'){
+        stage('user-checks'){
           steps{
             sh 'cat /etc/passwd | grep ubuntu'
           }
@@ -40,6 +40,7 @@ pipeline{
         stage('to-test-muti-build'){
           steps{
             sh 'lscpu'
+            sh 'free -m'
           }
         }
       }
