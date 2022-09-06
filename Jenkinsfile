@@ -40,6 +40,7 @@ pipeline{
         stage('to-test-muti-build'){
           steps{
             sh 'lscpu'
+            sh 'free -m'
           }
         }
       }
